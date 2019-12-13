@@ -62,10 +62,11 @@ public class TwitchChat extends PircBot {
 		}
 
 		if (message.startsWith("!searchquotes ")) {
-			ArrayList<Integer> quoteNumbers = QuoteSearcher.searchThroughQuote(message);
+			ArrayList<Integer> quoteNumbers = QuoteSearcher.searchThroughQuote(message); // Gets integer arraylist with all quote #s with the query
 			messageChat("Here is a list of quotes that match your query:");
 			String quoteList = "";
-			for(Integer number : quoteNumbers) {
+			//Takes the integers and convert them to string, and then add them to the quote list
+			for(Integer number : quoteNumbers) { 
 				String num = String.valueOf(number.intValue());
 				quoteList = quoteList + num + ", ";
 			}
