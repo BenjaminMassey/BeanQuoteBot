@@ -6,6 +6,7 @@ import org.jibble.pircbot.PircBot;
 import org.jibble.pircbot.User;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class TwitchChat extends PircBot {
 
@@ -59,6 +60,20 @@ public class TwitchChat extends PircBot {
 			messageChat("Added your quote! (#" +
 					(FileHandler.getFileLength("Quotes") - 1)+ ")");
 		}
+
+		if (message.startsWith("!searchquotes ")) {
+			ArrayList<Integer> quoteNumbers = QuoteSearcher.searchThroughQuote(message); // Gets integer arraylist with all quote #s with the query
+			messageChat("Here is a list of quotes that match your query:");
+			String quoteList = "";
+			//Takes the integers and convert them to string, and then add them to the quote list
+			for(Integer number : quoteNumbers) { 
+				String num = String.valueOf(number.intValue());
+				quoteList = quoteList + num + ", ";
+			}
+			messageChat(quoteList);
+		}
+
+
 
 		if (message.startsWith("!quote"))
 			messageChat(QuotesHandler.getQuote(message));
