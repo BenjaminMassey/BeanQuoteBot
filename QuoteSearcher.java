@@ -33,7 +33,7 @@ public class QuoteSearcher {
             String quoteLine = ""; 
 
             try {
-                quoteLine = FileHandler.readFromFile("quotes", i); //Tries to get quote from file
+            quoteLine = FileHandler.readFromFile("Quotes", i); //Tries to get quote from file
             }
             catch(Exception e) {
                 System.err.println("Not able to read quotes from file: " + e);
