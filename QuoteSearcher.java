@@ -38,6 +38,11 @@ public class QuoteSearcher {
             catch(Exception e) {
                 System.err.println("Not able to read quotes from file: " + e);
             }
+
+            // Don't care about capitalization, fix for both
+            searchTerm = searchTerm.toLowerCase();
+            quoteLine = quoteLine.toLowerCase();
+
             // Goes through every character in quote
             for(int j = 0; j<quoteLine.length(); j++) {
 
