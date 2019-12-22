@@ -20,7 +20,7 @@ public class QuoteSearcher {
         int fileLength = 0; 
 
         try {
-            fileLength = FileHandler.getFileLength("quotes"); //Tries to get number of lines from quotes.txt
+            fileLength = FileHandler.getFileLength("Quotes"); //Tries to get number of lines from quotes.txt
         }
         catch(Exception e) {
            System.err.println("Not able to find file length: " + e);
